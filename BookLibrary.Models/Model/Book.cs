@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Models.Model
 {
-    public class Books : BaseEntity
+    public class Book : BaseEntity
     {
         public int BookId { get; set; }
         public string Title { get; set; }
