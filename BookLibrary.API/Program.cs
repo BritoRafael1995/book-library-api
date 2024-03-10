@@ -1,8 +1,11 @@
 
-using Microsoft.EntityFrameworkCore;
-using System.Configuration;
-using System;
 using BookLibrary.DataStore.SQLServer;
+using BookLibrary.DataStore.SQLServer.Interface;
+using BookLibrary.DataStore.SQLServer.Repositories;
+using BookLibrary.Models;
+using BookLibrary.Services.Implementation;
+using BookLibrary.Services.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookLibrary.API
 {
@@ -16,6 +19,15 @@ namespace BookLibrary.API
             // Add services to the container.
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("localdb")));
+
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+
+
+            builder.Services.AddScoped<IBookService, BookService>();
+            builder.Services.AddScoped<IBookRepository, BookRepository>();
+
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
