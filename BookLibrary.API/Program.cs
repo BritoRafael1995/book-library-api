@@ -21,7 +21,7 @@ namespace BookLibrary.API
                 options.AddPolicy("CorsPolicy", builder =>
                 {
                     builder
-                        .WithOrigins("http://localhost:4200", "https://localhost:4200")
+                        .WithOrigins("*")
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials();
@@ -57,7 +57,7 @@ namespace BookLibrary.API
 
             app.UseCors("CorsPolicy");
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
