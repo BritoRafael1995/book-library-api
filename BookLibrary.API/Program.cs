@@ -1,4 +1,9 @@
 
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using System;
+using BookLibrary.DataStore.SQLServer;
+
 namespace BookLibrary.API
 {
     public class Program
@@ -6,8 +11,11 @@ namespace BookLibrary.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var configuration = builder.Configuration;
 
             // Add services to the container.
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("localdb")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

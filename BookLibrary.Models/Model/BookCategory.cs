@@ -2,10 +2,10 @@
 
 namespace BookLibrary.Models.Model
 {
-    public class BookType : BaseEntity
+    public class BookCategory : BaseEntity
     {
-        [Column("book_type_id")]
-        public int BookTypeId { get; set; }
+        [Column("category_id")]
+        public int CategoryId { get; set; }
         [Column(TypeName = "varchar(50)")]
         public string Description { get; set; }
         public List<Book> Books { get; set; }
