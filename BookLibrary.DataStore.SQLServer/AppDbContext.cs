@@ -14,6 +14,7 @@ namespace BookLibrary.DataStore.SQLServer
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<BookType> BookTypes { get; set; }
+        public DbSet<BookCategory> BookCategories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
