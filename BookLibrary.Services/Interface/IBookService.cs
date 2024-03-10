@@ -11,5 +11,6 @@ namespace BookLibrary.Services.Interface
     public interface IBookService
     {
         Task<List<BookDto>> Search(SearchFilter filter);
+        Task DataSeed();
     }
 }

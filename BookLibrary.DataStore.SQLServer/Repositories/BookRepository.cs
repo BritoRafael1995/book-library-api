@@ -65,25 +65,25 @@ namespace BookLibrary.DataStore.SQLServer.Repositories
 
         public async Task AddAuthors(List<Author> authors)
         {
-            _context.Authors.AddRangeAsync(authors);
+            await _context.Authors.AddRangeAsync(authors);
             _context.SaveChanges();
         }
 
         public async Task AddCategories(List<BookCategory> categories)
         {
-            _context.BookCategories.AddRangeAsync(categories);
+            await _context.BookCategories.AddRangeAsync(categories);
             _context.SaveChanges();
         }
 
         public async Task AddBookTypes(List<BookType> bookTypes)
         {
-            _context.BookTypes.AddRangeAsync(bookTypes);
+            await _context.BookTypes.AddRangeAsync(bookTypes);
             _context.SaveChanges();
         }
 
         public async Task AddBooks(List<Book> books)
         {
-            _context.Books.AddRangeAsync(books);
+            await _context.Books.AddRangeAsync(books);
             _context.SaveChanges();
         }
     }

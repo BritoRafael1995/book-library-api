@@ -20,5 +20,14 @@ namespace BookLibrary.API.Controllers
             var books = await _bookService.Search(filter);
             return Ok(books);
         }
+
+
+        [HttpPost("dataSeed")]
+        public async Task<IActionResult> DataSeed()
+        {
+            await _bookService.DataSeed();
+            return Ok();
+        }
+
     }
 }
