@@ -8,7 +8,7 @@ namespace BookLibrary.Models.Model
 {
     public class Books : BaseEntity
     {
-        public int Id { get; set; }
+        public int BookId { get; set; }
         public string Title { get; set; }
         public int AuthorId { get; set; }
         public int TotalCopies { get; set; }
