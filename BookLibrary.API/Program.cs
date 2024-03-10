@@ -16,6 +16,18 @@ namespace BookLibrary.API
             var builder = WebApplication.CreateBuilder(args);
             var configuration = builder.Configuration;
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder
+                        .WithOrigins("http://localhost:4200", "https://localhost:4200")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                });
+            });
+
             // Add services to the container.
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("localdb")));
@@ -42,6 +54,8 @@ namespace BookLibrary.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
 
