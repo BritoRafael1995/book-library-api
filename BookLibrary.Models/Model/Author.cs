@@ -9,7 +9,7 @@ namespace BookLibrary.Models.Model
         [Column("first_name", TypeName = "varchar(50)")]
         public string FirstName { get; set; }
         [Column("last_name", TypeName = "varchar(50)")]
-        public string LasName { get; set; }
+        public string LastName { get; set; }
         public List<Book> Books { get; set; }
     }
 }

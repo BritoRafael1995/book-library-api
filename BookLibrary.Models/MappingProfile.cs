@@ -26,7 +26,7 @@ namespace BookLibrary.Models
 
         private List<string> MapAuthors(List<Author> authors)
         {
-            return authors.Select(a => $"{a.FirstName} {a.LasName}").ToList();
+            return authors.Select(a => $"{a.FirstName} {a.LastName}").ToList();
         }
     }
 }
