@@ -25,57 +25,57 @@ namespace BookLibrary.Services.Implementation
                 new Author
                 {
                     FirstName = "Jane",
-                    LasName = "Austen"
+                    LastName = "Austen"
                 },
                 new Author
                 {
                     FirstName = "Paulo",
-                    LasName = "Coelho"
+                    LastName = "Coelho"
                 },
                 new Author
                 {
                     FirstName = "Herman",
-                    LasName = "Melville"
+                    LastName = "Melville"
                 },
                 new Author
                 {
                     FirstName = "Dan",
-                    LasName = "Brown"
+                    LastName = "Brown"
                 },
                 new Author
                 {
                     FirstName = "J.D.",
-                    LasName = "Salinger"
+                    LastName = "Salinger"
                 },
                 new Author
                 {
                     FirstName = "John",
-                    LasName = "Steinbeck"
+                    LastName = "Steinbeck"
                 },
                 new Author
                 {
                     FirstName = "Harper",
-                    LasName = "Lee"
+                    LastName = "Lee"
                 },
                 new Author
                 {
                     FirstName = "C.S.",
-                    LasName = "Lewis"
+                    LastName = "Lewis"
                 },
                 new Author
                 {
                     FirstName = "Douglas",
-                    LasName = "Adams"
+                    LastName = "Adams"
                 },
                 new Author
                 {
                     FirstName = "F. Scott",
-                    LasName = "Fitzgerald"
+                    LastName = "Fitzgerald"
                 },
                 new Author
                 {
                     FirstName = "Markus",
-                    LasName = "Zusak"
+                    LastName = "Zusak"
                 }
             };
             await _bookRepository.AddAuthors(authors);

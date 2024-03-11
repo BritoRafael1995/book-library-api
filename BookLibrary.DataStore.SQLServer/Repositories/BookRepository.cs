@@ -51,7 +51,11 @@ namespace BookLibrary.DataStore.SQLServer.Repositories
                 .Include(b => b.BookType)
                 .Include(b => b.Authors)
                 .Include(b => b.Categories)
-                .Where(b => b.Authors.Any(a => $"{a.FirstName} {a.LasName}".Contains(value))).ToListAsync();
+                .Where(b => b.Authors.Any(a => 
+                    a.FirstName.Contains(value) || 
+                    a.LastName.Contains(value) ||
+                    value.Contains(a.FirstName) ||
+                    value.Contains(a.LastName))).ToListAsync();
         }
 
         private async Task<List<Book>> SearchByTitle(string value)
